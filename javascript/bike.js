@@ -16,18 +16,43 @@ class Bike {
     //? Moving the player commands (To make inputs)
     // Moves to the left 
     left(){
-        return this.x;
+        return this.x -= 10;
     }
     // Moves to the right
     right(){
-        return this.x + this.width;
+        return this.x += 10;
     }
     // Moves to the top
     top(){
-        return this.y + this.height;
+        return this.y -= 10;
     }
     // Moves Down
     bottom(){
-        return this.y;
+        return this.y += 10;
     }
+    
+    crash = (trail) => {
+        const currentPos = { x: bike1.x, y: bike1.y};
+        const tempTrail = [...trail];
+        tempTrail.pop(); // removes the last coordinates just in the verification
+        const foundColision = tempTrail.some((position) => { // verify if theres is alreay that position int he array
+            return position.x === currentPos.x &&
+            position.y === currentPos.y
+        });
+
+        if(foundColision === true){
+            alert("Crash")
+        }
+
+        return foundColision;
+    }
+
+    crashWithBorder = () => {
+        const currentPos = { x: bike1.x, y: bike1.y};
+        if ((currentPos.x === canvas.width || currentPos.x === 0) ||
+        (currentPos.y === canvas.height || currentPos.y === 0))
+        return true;
+    }
+
 }
+
