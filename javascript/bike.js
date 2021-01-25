@@ -5,8 +5,6 @@ class Bike {
         this.width = width;
         this.height = height
         this.color = color 
-        this.speedX = 25;
-        this.speedY = 25;
     }
 
     draw(){
@@ -31,7 +29,7 @@ class Bike {
         return this.y += 10;
     }
     
-    crash = (trail) => {
+    crashB1 = (trail) => {
         const currentPos = { x: bike1.x, y: bike1.y};
         const tempTrail = [...trail];
         tempTrail.pop(); // removes the last coordinates just in the verification
@@ -41,18 +39,68 @@ class Bike {
         });
 
         if(foundColision === true){
-            alert("Crash")
+            alert("Crash Blue Wins")
         }
 
         return foundColision;
     }
 
-    crashWithBorder = () => {
-        const currentPos = { x: bike1.x, y: bike1.y};
-        if ((currentPos.x === canvas.width || currentPos.x === 0) ||
-        (currentPos.y === canvas.height || currentPos.y === 0))
-        return true;
+    crashB2 = (trail) => {
+        const currentPos = { x: bike2.x, y: bike2.y};
+        const tempTrail = [...trail];
+        tempTrail.pop(); // removes the last coordinates just in the verification
+        const foundColision = tempTrail.some((position) => { // verify if theres is alreay that position int he array
+            return position.x === currentPos.x &&
+            position.y === currentPos.y
+        });
+
+        if(foundColision === true){
+            alert("Crash Red Wins")
+        }
     }
 
+    crashWithBorderB1 = () => {
+        const currentPos = { x: bike1.x, y: bike1.y};
+        const bounds = {x: 500, y: 500}
+        if (currentPos.x === bounds.x || currentPos.y === bounds.y ||
+             currentPos.x < 0 ||currentPos.y < 0){
+            alert('Out of bounds Blue Wins');
+        }
+    }
+
+    crashWithBorderB2 = () => {
+        const currentPos = { x: bike2.x, y: bike2.y};
+        const bounds = {x: 500, y: 500}
+        if (currentPos.x === bounds.x || currentPos.y === bounds.y ||
+             currentPos.x < 0 ||currentPos.y < 0){
+            alert('Out of bounds Red Wins');
+        }
+    }
+
+    crashB1WithTrail2 = (trail) => {
+        const currentPos = { x: bike1.x, y: bike1.y};
+        const tempTrail = [...trail];
+        const foundColision = tempTrail.some((position) => { // verify if theres is alreay that position int he array
+            return position.x === currentPos.x &&
+            position.y === currentPos.y
+        });
+
+        if (foundColision === true){
+            alert('Blue Wins')
+        }
+    }
+
+    crashB2WithTrail = (trail) => {
+        const currentPos = { x: bike2.x, y: bike2.y};
+        const tempTrail = [...trail];
+        const foundColision = tempTrail.some((position) => { // verify if theres is alreay that position int he array
+            return position.x === currentPos.x &&
+            position.y === currentPos.y
+        });
+
+        if (foundColision === true){
+            alert('Red Wins')
+        }
+    }
 }
 

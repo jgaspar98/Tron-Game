@@ -1,8 +1,45 @@
 #game-board{
     background-color: rgb(70, 70, 70);
     border: 2px solid rgb(0, 195, 255);
+    position: absolute;
+    left: 45rem;
 }
 
 body{
     background-color: black;
+}
+
+.introduction{
+    height: 13rem;
+    color:white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.rules{
+    color: white;
+    position: absolute;
+    left: 1rem;
+    top: 17rem;
+    width: 43rem;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid rgb(0, 195, 255);
+}
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.rules-paragraph{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: justify;
+    padding: 1rem;
 }
