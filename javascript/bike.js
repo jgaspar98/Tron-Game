@@ -5,6 +5,10 @@ class Bike {
         this.width = width;
         this.height = height
         this.color = color 
+        this.speedX = 0;
+        this.speedY = 0;
+        this.speedingX = false;
+        this.speedingY = false;
     }
 
     draw(){
@@ -14,21 +18,39 @@ class Bike {
     //? Moving the player commands (To make inputs)
     // Moves to the left 
     left(){
-        return this.x -= 10;
+        this.speedX = -5;
+        this.speedingX = true;
+        this.speedingY = false;
     }
     // Moves to the right
     right(){
-        return this.x += 10;
+        this.speedX = 5;
+        this.speedingX = true;
+        this.speedingY = false;
     }
     // Moves to the top
     top(){
-        return this.y -= 10;
+        this.speedY = -5;
+        this.speedingX = false;
+        this.speedingY = true;
+       
     }
     // Moves Down
     bottom(){
-        return this.y += 10;
+        this.speedY = 5;
+        this.speedingX = false;
+        this.speedingY = true;
+    }
+
+    newPos() {
+        if (this.speedingX) {
+            this.x += this.speedX;
+        } else {
+            this.y += this.speedY;
+        }
     }
     
+    // Check it the B1 hits his own trail
     crashB1 = (trail) => {
         const currentPos = { x: bike1.x, y: bike1.y};
         const tempTrail = [...trail];
@@ -39,12 +61,12 @@ class Bike {
         });
 
         if(foundColision === true){
-            alert("Crash Blue Wins")
+            alert('Blue turned back... It Crashed into his own line')
+            return true 
         }
-
-        return foundColision;
     }
 
+    // Check it the B2 hits his own trail
     crashB2 = (trail) => {
         const currentPos = { x: bike2.x, y: bike2.y};
         const tempTrail = [...trail];
@@ -55,52 +77,72 @@ class Bike {
         });
 
         if(foundColision === true){
-            alert("Crash Red Wins")
+            alert('Blue turned back... It Crashed into his own line')
+            return true
         }
     }
 
+    // Check it the B1 hits the Borders
     crashWithBorderB1 = () => {
         const currentPos = { x: bike1.x, y: bike1.y};
         const bounds = {x: 500, y: 500}
         if (currentPos.x === bounds.x || currentPos.y === bounds.y ||
              currentPos.x < 0 ||currentPos.y < 0){
-            alert('Out of bounds Blue Wins');
+                alert('Red out of bounds')
+                return true;
         }
     }
 
+    // Check it the B2 hits the Borders
     crashWithBorderB2 = () => {
         const currentPos = { x: bike2.x, y: bike2.y};
         const bounds = {x: 500, y: 500}
         if (currentPos.x === bounds.x || currentPos.y === bounds.y ||
              currentPos.x < 0 ||currentPos.y < 0){
-            alert('Out of bounds Red Wins');
+                alert('Blue out of bounds')
+                return true;
         }
     }
 
+    // Check it the B1 hits the trail of B2
     crashB1WithTrail2 = (trail) => {
         const currentPos = { x: bike1.x, y: bike1.y};
         const tempTrail = [...trail];
+        tempTrail.pop();
         const foundColision = tempTrail.some((position) => { // verify if theres is alreay that position int he array
             return position.x === currentPos.x &&
             position.y === currentPos.y
         });
 
         if (foundColision === true){
-            alert('Blue Wins')
+            alert('Blue Won')
+            return true
         }
     }
 
+    // Check it the B2 hits the trail of B1
     crashB2WithTrail = (trail) => {
         const currentPos = { x: bike2.x, y: bike2.y};
         const tempTrail = [...trail];
+        tempTrail.pop();
         const foundColision = tempTrail.some((position) => { // verify if theres is alreay that position int he array
             return position.x === currentPos.x &&
             position.y === currentPos.y
         });
 
         if (foundColision === true){
-            alert('Red Wins')
+            alert('Red Won')
+            return true;
         }
     }
+
+    inCaseOfDraw = () => {
+        const currentPos2 = { x: bike2.x, y: bike2.y};
+        const currentPos1 = { x: bike1.x, y: bike1.y};
+        if(currentPos1.x === currentPos2.x && currentPos1.y === currentPos2.y){
+            return true;
+        }
+    }
+    
 }
 

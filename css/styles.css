@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: black;
+    background-image: url('https://external-preview.redd.it/MsGvB0J0HhwWwpCelbPA1hysu2pkfq8xyIUiRPIGjPs.png?auto=webp&s=a0d9e5f5d7d162d1577434fa5bfa93a7e820d520');
 }
 
 .introduction{
@@ -43,3 +43,76 @@ h2{
     text-align: justify;
     padding: 1rem;
 }
+
+.controls{
+    color: white;
+    position: absolute;
+    left: 77rem;
+    top: 17rem;
+    width: 41rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid rgb(0, 195, 255);
+}
+
+.controls-paragraph{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: justify;
+    padding: 1rem;
+    text-align: center;
+}
+
+.redbike{
+    font-size: 2rem;
+    text-align: center;
+    color: red;
+}
+
+.bluebike{
+    font-size: 2rem;
+    text-align: center;
+    color: cyan;
+}
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #036897, 0 0 40px #05828d, 0 0 50px #05919e, 0 0 60px #04909c, 0 0 70px #0099a7;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #e22222, 0 0 40px #ee1313, 0 0 50px #ee0909, 0 0 60px #ee0e0e, 0 0 70px #fa3116, 0 0 80px #fb0000;
+    }
+  }
+
+  .start-button{
+    position: absolute;
+    left: 8rem;
+    top: 42rem;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  h3{
+    position: absolute;
+    left: 11rem;
+    color: white;
+    top: 38rem;
+  }
+
+  .replay-button{
+    position: absolute;
+    left: 25rem;
+    top: 42rem;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }

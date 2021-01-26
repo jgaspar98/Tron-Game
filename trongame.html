@@ -8,8 +8,14 @@
 </head>
 <body>
     <div class="introduction">
-        <h1>TRON GAME</h1>
+        <h1 class="glow">TRON GAME</h1>
         <p>This game is a tribute to the the lightcycle race of the original tron game realeased in 1982.</p>
+    </div>
+    <div class="controls">  
+        <h2 class="redbike">Red bike Controls</h2>
+        <p class="controls-paragraph">To move the red bike use: W, A, S, D</p>
+        <h2 class="bluebike">Blue bike Controls</h2>
+        <p class="controls-paragraph">To move the blue bike use: ArrowUp, ArrowLeft, ArrowDown, ArrowRight </p>
     </div>
     <div class="rules">
         <h2>Game Rules</h2>
@@ -19,6 +25,14 @@
         </p>
     </div>
     <canvas id="game-board" width="500" height="500"></canvas>
+    <div>
+        <h3>You have three seconds after hitting Start</h3>
+        <button id="start" class="start-button">START</button>
+    </div>
+    <div>
+        <h3>You have three seconds after hitting Start</h3>
+        <button onClick="window.location.reload();" id="replay" class="replay-button">REPLAY</button>
+    </div>
     <script src="javascript/bike.js"></script>
     <script src="javascript/tron.js"></script>
 </body>
