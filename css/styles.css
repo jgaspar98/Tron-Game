@@ -5,9 +5,33 @@
     left: 45rem;
 }
 
-body{
-    background-image: url('https://external-preview.redd.it/MsGvB0J0HhwWwpCelbPA1hysu2pkfq8xyIUiRPIGjPs.png?auto=webp&s=a0d9e5f5d7d162d1577434fa5bfa93a7e820d520');
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+.container {
+  background: linear-gradient(225deg, #1b43b1, #000000, #000000, #000000, #d13737);
+  background-size: 300% 300%;
+  box-sizing: border-box;
+  display: table;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  -webkit-animation: Rainbow 25s ease infinite;
+  -moz-animation: Rainbow 25s ease infinite;
+  animation: Rainbow 25s ease infinite;
+}
+
+@-webkit-keyframes Rainbow {
+  0% {
+    background-position: 94% 0%; }
+  50% {
+    background-position: 7% 100%; }
+  100% {
+    background-position: 94% 0%; } }
 
 .introduction{
     height: 13rem;
@@ -55,11 +79,11 @@ h2{
 }
 
 .controls-paragraph{
-    font-size: 1rem;
-    line-height: 1.5rem;
-    text-align: justify;
-    padding: 1rem;
-    text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 10rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 .redbike{
@@ -96,9 +120,14 @@ h2{
     position: absolute;
     left: 8rem;
     top: 42rem;
-    padding: 2rem;
+    padding: 1rem;
     padding-left: 3rem;
     padding-right: 3rem;
+    border-radius: 2rem;
+    background-color: rgb(246, 12, 12);
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
   }
 
   h3{
@@ -112,7 +141,54 @@ h2{
     position: absolute;
     left: 25rem;
     top: 42rem;
-    padding: 2rem;
+    padding: 1rem;
     padding-left: 3rem;
     padding-right: 3rem;
+    border-radius: 2rem;
+    background-color: darkcyan;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
   }
+
+  .wasd{
+    position: absolute;
+    filter:saturate();
+    left: 16rem;
+    height: 7rem;
+    width: 10rem;
+  }
+
+  .arrow-keys{
+    position: absolute;
+    top: 17rem;
+    left: 13rem;
+    height: 20rem;
+    width: 17rem;
+  }
+
+  .my-logo{
+    position: absolute;
+    left: 21rem;
+    top: 47rem;
+    border-radius: 2rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .my-logo:hover{
+    animation: bounce;
+    animation-duration: 1s;
+  }
+
+  @keyframes bounce {
+    0%, 100%, 80% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(15px);
+    }
+}

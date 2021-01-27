@@ -143,6 +143,5 @@ class Bike {
             return true;
         }
     }
-    
 }
 
