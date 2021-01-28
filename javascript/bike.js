@@ -15,6 +15,7 @@ class Bike {
         context.fillStyle =this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
+    
     //? Moving the player commands (To make inputs)
     // Moves to the left 
     left(){
