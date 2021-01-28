@@ -15,7 +15,7 @@ class Bike {
         context.fillStyle =this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
-    
+
     //? Moving the player commands (To make inputs)
     // Moves to the left 
     left(){
@@ -62,7 +62,7 @@ class Bike {
         });
 
         if(foundColision === true){
-            alert('Blue turned back... It Crashed into his own line')
+            alert('Red turned back... It Crashed into his own line')
             return true 
         }
     }
